@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import FirstPage from './Components/FirstPage/FirstPage';
 import Friends from './Components/Friends/Friends';
+import SingleFriend from './Components/SingleFriend/SingleFriend';
 
 const router = createBrowserRouter([
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         path: "/friends",
         element: <Friends></Friends>,
         loader: ()=> fetch("https://jsonplaceholder.typicode.com/users")
+      },
+      {
+        path: "/friend/:friendID",
+        element: <SingleFriend></SingleFriend>
       },
       {
         path: "/about",
