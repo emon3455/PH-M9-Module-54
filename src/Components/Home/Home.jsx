@@ -4,12 +4,13 @@ import { Outlet } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div>
+        <div className='container mx-auto'>
 
             <Header></Header>
-            <h2>This is home</h2>
+            
             <Outlet></Outlet>
             
+
         </div>
     );
 };
