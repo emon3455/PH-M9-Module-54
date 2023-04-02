@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
+import Home from './Components/Home/Home';
 
 import {
   createBrowserRouter,
@@ -9,14 +12,22 @@ import {
 } from "react-router-dom";
 
 const router = createBrowserRouter([
+
   {
-    path: "",
-    element: <div>Home Page</div>
-  },
-  {
-    path:"/about",
-    element: <App></App>
+    path: "/",
+    element: <Home></Home>,
+    children: [
+      {
+        path: "/about",
+        element: <About></About>
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>
+      }
+    ]
   }
+
 
 ])
 
