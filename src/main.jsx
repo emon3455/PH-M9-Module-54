@@ -65,6 +65,12 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>
+      },
+      {
+        path: "*",
+        element: <div className="text-4xl flex justify-center items-center h-screen">
+                    <p className='text-center '> <span className='text-8xl'>404</span>  <br /> Page Not Found!!</p>
+                </div>
       }
     ]
   }
