@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
     return (
         <nav className='text-xl flex flex-col text-center md:text-left md:flex-row justify-around p-2 bg-black text-white'>
-            <Link to="/">Home</Link>
-            <Link to="/friends">Friends</Link>
-            <Link to="/posts">Posts</Link>
-            <Link to="/toDoos">ToDoos</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+            <ActiveLink to="/">Home</ActiveLink>
+            <ActiveLink to="/friends">Friends</ActiveLink>
+            <ActiveLink to="/posts">Posts</ActiveLink>
+            <ActiveLink to="/toDoos">ToDoos</ActiveLink>
+            <ActiveLink to="/about">About</ActiveLink>
+            <ActiveLink to="/contact">Contact</ActiveLink>
         </nav>
     );
 };
