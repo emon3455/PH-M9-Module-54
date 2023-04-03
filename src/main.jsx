@@ -13,6 +13,8 @@ import {
 import FirstPage from './Components/FirstPage/FirstPage';
 import Friends from './Components/Friends/Friends';
 import SingleFriend from './Components/SingleFriend/SingleFriend';
+import Posts from './Components/Posts/Posts';
+import SinglePost from './Components/SinglePost/SinglePost';
 
 const router = createBrowserRouter([
 
@@ -35,6 +37,16 @@ const router = createBrowserRouter([
         loader: ({params})=> fetch(`https://jsonplaceholder.typicode.com/users/${params.friendID}`)
       },
       {
+        path: "/posts",
+        element: <Posts></Posts>,
+        loader: ()=> fetch("https://jsonplaceholder.typicode.com/posts")
+      },
+      {
+        path: "/post/:postID",
+        element: <SinglePost></SinglePost>,
+        loader: ({params})=> fetch(`https://jsonplaceholder.typicode.com/posts/${params.postID}`)
+      },
+      {
         path: "/about",
         element: <About></About>
       },
@@ -44,8 +56,6 @@ const router = createBrowserRouter([
       }
     ]
   }
-
-
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
